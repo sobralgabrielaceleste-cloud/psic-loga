@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lic. Gabriela Sobral - Psicóloga Clínica</title>
+    
+    <!-- Importamos tipografías de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variables de color */
+        :root {
+            --bg-crema: #FAF6F0;
+            --texto-oscuro: #43423E;
+            --texto-parrafo: #5A5854;
+            --terracota: #C68972;
+            --verde-salvia: #A7BA98;
+            --blanco: #FFFFFF;
+        }
+
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-crema);
+            color: var(--texto-parrafo);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+            color: var(--texto-oscuro);
+            font-weight: 600;
+        }
+
+        .seccion-etiqueta {
+            color: var(--terracota);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .resaltado-verde {
+            background: linear-gradient(180deg, transparent 65%, var(--verde-salvia) 65%);
+            display: inline;
+        }
+
+        /* Encabezado superior */
+        header {
+            background-color: var(--blanco);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-logo {
+            width: 45px;
+            height: 45px;
+            background-color: var(--terracota);
+            color: var(--blanco);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Lora', serif;
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+        .header-texto strong {
+            color: var(--texto-oscuro);
+            font-size: 1.1rem;
+            display: block;
+            line-height: 1.2;
+        }
+        .header-texto span {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* Contenedores */
+        .contenedor {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .contenedor-sin-padding-top {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px 40px 20px;
+        }
+
+        /* Imágenes */
+        .profile-img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            object-fit: cover;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .img-ambiente {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        /* Títulos */
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0 20px 0;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 2.2rem;
+            margin: 10px 0 20px 0;
+            line-height: 1.2;
+        }
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        /* Listas personalizadas */
+        .lista-ayuda {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .lista-ayuda li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+        .lista-ayuda li::before {
+            content: '•';
+            color: var(--terracota);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Botones */
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .btn {
+            background-color: var(--terracota);
+            color: var(--blanco);
+            padding: 16px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(198, 137, 114, 0.3);
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: var(--terracota);
+            border: 2px solid var(--terracota);
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Sección Primera Consulta */
+        .seccion-terracota {
+            background-color: var(--terracota);
+            color: var(--blanco);
+            padding: 60px 20px;
+            margin: 40px 0 30px 0; /* Menos margen abajo para dar paso a la foto */
+        }
+        .seccion-terracota h2 {
+            color: var(--blanco);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .seccion-terracota p {
+            color: var(--blanco);
+            text-align: center;
+        }
+
+        /* Botón Flotante WhatsApp */
+        .wa-flotante {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+        .wa-flotante:hover {
+            transform: scale(1.1);
+        }
+        .wa-flotante svg {
+            width: 35px;
+            height: 35px;
+            fill: currentColor;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--texto-oscuro);
+            color: var(--bg-crema);
+            text-align: center;
+            padding: 50px 20px;
+        }
+        footer a {
+            color: var(--terracota);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-logo">GS</div>
+        <div class="header-texto">
+            <strong>Lic. Gabriela Sobral</strong>
+            <span>Psicóloga Clínica · M.P. 16.087</span>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <div class="contenedor">
+        <img src="perfil.jpg.jpeg" alt="Lic. Gabriela Sobral" class="profile-img">
+        
+        <span class="seccion-etiqueta">Psicóloga Clínica · M.P. 16.087</span>
+        <h1>Hola, soy <br><span class="resaltado-verde">Gabriela Sobral</span></h1>
+        
+        <p>Especializada en <strong>Terapia Cognitivo Conductual (TCC)</strong></p>
+        
+        <div class="btn-container">
+            <a href="https://wa.me/5493515945085" class="btn" target="_blank">Agendar una sesión</a>
+            <a href="https://www.instagram.com/psico.gabrielasobral?igsh=MXA1OGUzMHlvajMwdw==" class="btn-outline" target="_blank">Visitar mi Instagram</a>
+        </div>
+    </div>
+
+    <!-- SOBRE MI -->
+    <div class="contenedor" style="padding-top: 10px;">
+        <h2>Un poco <span class="resaltado-verde">sobre mí</span></h2>
+        
+        <p>Soy <strong>Licenciada en Psicología egresada de la Universidad Nacional de Córdoba.</strong></p>
+        <p>Acompaño procesos terapéuticos de adolescentes y adultos desde la Terapia Cognitivo Conductual (TCC) y Terapias Contextuales.</p>
+        <p>Me gusta definir la terapia como un trabajo en equipo: un espacio seguro y cálido, donde exploramos juntos qué cosas te están haciendo ruido hoy.</p>
+        <p style="font-weight: 600; color: var(--terracota);">Si estás buscando un lugar para priorizarte, ¡llegaste al lugar indicado!</p>
+    </div>
+
+    <!-- PRIMERA CONSULTA (Fondo Terracota) -->
+    <section class="seccion-terracota">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <h2>Sobre la <br>primera consulta</h2>
+            <p>Durante nuestro primer encuentro vamos a conocernos, conversar sobre el motivo de tu consulta y definir juntos los objetivos terapéuticos.</p>
+            <p><strong>No necesitás preparar nada previamente.</strong></p>
+            <p>Es un espacio para que puedas hablar con total tranquilidad y sin juicios.</p>
+        </div>
+    </section>
+
+    <!-- FOTO DEL CONSULTORIO (Nuevo) -->
+    <div class="contenedor-sin-padding-top">
+        <img src="fto_con.jpeg" alt="Espacio de consulta cálido y seguro" class="img-ambiente">
+    </div>
+
+    <!-- A QUIENES ACOMPAÑO -->
+    <div class="contenedor" style="padding-top: 10px;">
+        <h2>¿A quiénes <span class="resaltado-verde">acompaño?</span></h2>
+        
+        <div style="margin-top: 30px;">
+            <h3 style="color: var(--terracota); margin-bottom: 5px;">Adolescentes</h3>
+            <p>Acompañamiento en una etapa de cambios, brindando herramientas para la gestión emocional, la ansiedad y el desarrollo de la identidad.</p>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <h3 style="color: var(--terracota); margin-bottom: 5px;">Adultos</h3>
+            <p>Abordaje de la ansiedad, el estrés, las crisis vitales y el desarrollo personal mediante intervenciones basadas en evidencia (TCC).</p>
+        </div>
+    </div>
+
+    <!-- EN QUE PUEDO AYUDARTE (Nuevo) -->
+    <div class="contenedor" style="padding-top: 20px;">
+        <h2>¿En qué puedo <span class="resaltado-verde">ayudarte?</span></h2>
+        
+        <ul class="lista-ayuda">
+            <li>Ansiedad y ataques de pánico.</li>
+            <li>Estrés y sobrecarga emocional.</li>
+            <li>Angustia y sensación de vacío.</li>
+            <li>Baja autoestima e inseguridad.</li>
+            <li>Regulación emocional.</li>
+            <li>Duelos y procesos de pérdida.</li>
+            <li>Crisis vitales y cambios importantes.</li>
+            <li>Conflictos de pareja y familiares.</li>
+            <li>Dependencia emocional.</li>
+            <li>Miedo al rechazo y dificultad para poner límites.</li>
+            <li>Trastornos de ansiedad.</li>
+            <li>Crecimiento personal y autoconocimiento.</li>
+        </ul>
+    </div>
+
+    <!-- BOTON FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/5493515945085" class="wa-flotante" target="_blank" title="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+        <h2 style="color: var(--bg-crema); margin-bottom: 5px;">Lic. Gabriela Sobral</h2>
+        <p style="margin-top: 0; color: #999;">Psicóloga Clínica y Terapias Contextuales</p>
+        <p style="margin-top: 30px;">
+            <a href="https://www.instagram.com/psico.gabrielasobral?igsh=MXA1OGUzMHlvajMwdw==" target="_blank">Instagram</a> | 
+            <a href="https://wa.me/5493515945085" target="_blank">WhatsApp</a>
+        </p>
+    </footer>
+
+</body>
+</html>
