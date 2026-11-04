@@ -154,18 +154,21 @@
             font-weight: 700;
         }
 
-        /* Imagen de perfil ovalada como en el flyer */
+       /* Imagen de perfil rectangular con bordes redondeados armónicos */
         .profile-img-container {
             display: flex;
             justify-content: center;
+            height: 100%;
         }
         .profile-img {
-            width: 280px;
-            height: 360px;
-            border-radius: 50%;
+            width: 100%;
+            max-width: 340px;
+            height: 430px;
+            border-radius: 28px;
             object-fit: cover;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-            border: 6px solid var(--bg-crema);
+            object-position: center top;
+            box-shadow: 0 12px 30px rgba(67, 45, 34, 0.12);
+            border: 6px solid var(--blanco);
         }
 
         /* Botones */
