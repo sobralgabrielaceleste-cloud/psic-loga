@@ -5,133 +5,320 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lic. Gabriela Sobral - Psicóloga Clínica</title>
     
-    <!-- Importamos tipografías de Google Fonts -->
+    <!-- Tipografías alineadas a la estética de las placas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> 
 
     <style>
-        /* Variables de color */
+        /* Variables de color extraídas de las imágenes de referencia */
         :root {
-            --bg-crema: #FAF6F0;
-            --texto-oscuro: #43423E;
-            --texto-parrafo: #5A5854;
-            --terracota: #C68972;
-            --verde-salvia: #A7BA98;
+            --bg-crema: #FBF8F5;
+            --terracota-suave: #B5836D;
+            --marron-intenso: #7D451B;
+            --texto-oscuro: #2B2623;
+            --texto-parrafo: #4A423E;
             --blanco: #FFFFFF;
+            --crema-claro: #F3ECE4;
         }
 
         /* Estilos generales */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--bg-crema);
             color: var(--texto-parrafo);
             line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 {
-            font-family: 'Lora', serif;
-            color: var(--texto-oscuro);
+        h1, h2, h3, .serif-title {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--terracota-suave);
             font-weight: 600;
-        }
-
-        .seccion-etiqueta {
-            color: var(--terracota);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .resaltado-verde {
-            background: linear-gradient(180deg, transparent 65%, var(--verde-salvia) 65%);
-            display: inline;
         }
 
         /* Encabezado superior */
         header {
-            background-color: var(--blanco);
-            padding: 15px 20px;
+            background-color: var(--bg-crema);
+            padding: 15px 25px;
             display: flex;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(181, 131, 109, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
         }
+        .header-brand {
+            display: flex;
+            align-items: center;
+        }
         .header-logo {
-            width: 45px;
-            height: 45px;
-            background-color: var(--terracota);
+            width: 44px;
+            height: 44px;
+            background-color: var(--terracota-suave);
             color: var(--blanco);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Lora', serif;
-            font-size: 1.2rem;
-            margin-right: 15px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-right: 14px;
         }
         .header-texto strong {
-            color: var(--texto-oscuro);
-            font-size: 1.1rem;
+            color: var(--terracota-suave);
+            font-size: 1.05rem;
             display: block;
             line-height: 1.2;
+            font-weight: 600;
         }
         .header-texto span {
-            font-size: 0.85rem;
-            color: #888;
+            font-size: 0.8rem;
+            color: var(--texto-parrafo);
         }
 
         /* Contenedores */
         .contenedor {
-            max-width: 600px;
+            max-width: 780px;
             margin: 0 auto;
-            padding: 40px 20px;
-        }
-        .contenedor-sin-padding-top {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 20px 40px 20px;
+            padding: 45px 22px;
+            position: relative;
         }
 
-        /* Imágenes */
+        /* Fondos con ondas orgánicas estilo flyer */
+        .hero-wrapper {
+            position: relative;
+            background: linear-gradient(165deg, var(--terracota-suave) 0%, var(--terracota-suave) 36%, var(--bg-crema) 36.3%);
+            padding-top: 20px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        @media (min-width: 680px) {
+            .hero-grid {
+                grid-template-columns: 1.15fr 0.85fr;
+            }
+        }
+
+        /* Tarjeta de presentación estilo Flyer 1 */
+        .hero-info {
+            background-color: rgba(251, 248, 245, 0.95);
+            padding: 30px 25px;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(67, 45, 34, 0.07);
+        }
+
+        .titulo-psicologa {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            color: var(--terracota-suave);
+            line-height: 0.95;
+            margin: 0 0 10px 0;
+            letter-spacing: -1px;
+        }
+
+        .subtitulo-lic {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--terracota-suave);
+            margin: 0 0 4px 0;
+        }
+
+        .matricula-badge {
+            font-size: 1.2rem;
+            color: var(--terracota-suave);
+            font-weight: 400;
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .saludo-original {
+            font-size: 1.5rem;
+            color: var(--marron-intenso);
+            margin: 15px 0 8px 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+        }
+
+        /* Imagen de perfil ovalada como en el flyer */
+        .profile-img-container {
+            display: flex;
+            justify-content: center;
+        }
         .profile-img {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
+            width: 280px;
+            height: 360px;
+            border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            border: 6px solid var(--bg-crema);
         }
 
-        .img-ambiente {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            border-radius: 20px;
-            object-fit: cover;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            margin-bottom: 20px;
+        /* Botones */
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        .btn {
+            background-color: var(--marron-intenso);
+            color: var(--blanco);
+            padding: 15px 28px;
+            text-decoration: none;
+            border-radius: 35px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(125, 69, 27, 0.25);
+        }
+        .btn:hover {
+            background-color: var(--terracota-suave);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: var(--marron-intenso);
+            border: 2px solid var(--marron-intenso);
+            padding: 13px 28px;
+            text-decoration: none;
+            border-radius: 35px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background-color: var(--crema-claro);
         }
 
-        /* Títulos */
-        h1 {
-            font-size: 2.5rem;
-            margin: 10px 0 20px 0;
-            line-height: 1.2;
-        }
+        /* Títulos y textos generales */
         h2 {
-            font-size: 2.2rem;
-            margin: 10px 0 20px 0;
-            line-height: 1.2;
+            font-size: 2.5rem;
+            margin: 0 0 20px 0;
+            line-height: 1.15;
+            color: var(--terracota-suave);
         }
         p {
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        .resaltado-tierra {
+            color: var(--marron-intenso);
+            font-style: italic;
+        }
+
+        /* Sección Consultorio + Burbuja Modalidad (Estilo Flyer 1 arriba) */
+        .consultorio-modalidad-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            align-items: center;
+            margin: 20px 0;
+        }
+        @media (min-width: 650px) {
+            .consultorio-modalidad-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .img-ambiente-circular {
+            width: 290px;
+            height: 290px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+            display: block;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 5px solid var(--blanco);
+        }
+
+        .globo-marron {
+            background-color: var(--marron-intenso);
+            color: var(--blanco);
+            padding: 40px 30px;
+            border-radius: 52% 48% 45% 55% / 55% 45% 55% 45%;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(125, 69, 27, 0.2);
+        }
+        .globo-marron h3 {
+            color: var(--blanco);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            margin: 0 0 8px 0;
+            text-transform: uppercase;
+        }
+        .globo-marron p {
+            color: var(--blanco);
+            font-size: 1.15rem;
+            margin: 6px 0;
+            font-weight: 300;
+        }
+
+        /* Sección Primera Consulta */
+        .seccion-terracota {
+            background-color: var(--terracota-suave);
+            color: var(--blanco);
+            padding: 60px 22px;
+            margin: 30px 0;
+            border-radius: 40px 40px 0 0;
+            position: relative;
+        }
+        .seccion-terracota h2 {
+            color: var(--blanco);
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2.6rem;
+        }
+        .seccion-terracota p {
+            color: var(--blanco);
+            text-align: center;
             font-size: 1.05rem;
-            margin-bottom: 20px;
+        }
+
+        /* Tarjetas A quiénes acompaño */
+        .tarjetas-acompano {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 25px;
+        }
+        @media (min-width: 600px) {
+            .tarjetas-acompano {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .card-edad {
+            background-color: var(--crema-claro);
+            padding: 25px;
+            border-radius: 20px;
+            border-left: 5px solid var(--terracota-suave);
+        }
+        .card-edad h3 {
+            color: var(--marron-intenso);
+            font-size: 1.7rem;
+            margin: 0 0 10px 0;
+        }
+        .card-edad p {
+            margin: 0;
+            font-size: 0.98rem;
         }
 
         /* Listas personalizadas */
@@ -139,68 +326,138 @@
             list-style: none;
             padding: 0;
             margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        @media (min-width: 600px) {
+            .lista-ayuda {
+                grid-template-columns: 1fr 1fr;
+            }
         }
         .lista-ayuda li {
             position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
-            font-size: 1.05rem;
+            padding-left: 22px;
+            font-size: 1rem;
         }
         .lista-ayuda li::before {
             content: '•';
-            color: var(--terracota);
-            font-size: 1.5rem;
+            color: var(--marron-intenso);
+            font-size: 1.4rem;
             position: absolute;
             left: 0;
-            top: -5px;
+            top: -4px;
         }
 
-        /* Botones */
-        .btn-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 30px;
+        /* Sección Coberturas / Obras Sociales (Estilo Flyer 2) */
+        .seccion-obras-sociales {
+            background-color: var(--crema-claro);
+            border-radius: 35px;
+            padding: 40px 25px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
         }
-        .btn {
-            background-color: var(--terracota);
+        .encabezado-coberturas {
+            background-color: var(--terracota-suave);
             color: var(--blanco);
-            padding: 16px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(198, 137, 114, 0.3);
-        }
-        .btn-outline {
-            background-color: transparent;
-            color: var(--terracota);
-            border: 2px solid var(--terracota);
-            padding: 14px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        /* Sección Primera Consulta */
-        .seccion-terracota {
-            background-color: var(--terracota);
-            color: var(--blanco);
-            padding: 60px 20px;
-            margin: 40px 0 30px 0; /* Menos margen abajo para dar paso a la foto */
-        }
-        .seccion-terracota h2 {
-            color: var(--blanco);
-            text-align: center;
+            padding: 25px 30px;
+            border-radius: 25px;
             margin-bottom: 30px;
         }
-        .seccion-terracota p {
+        .encabezado-coberturas h2 {
             color: var(--blanco);
-            text-align: center;
+            font-weight: 400;
+            font-size: 2.3rem;
+            margin: 0;
+            line-height: 1.25;
+        }
+
+        .coberturas-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+        @media (min-width: 650px) {
+            .coberturas-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        .lista-os {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            color: var(--texto-oscuro);
+            font-weight: 600;
+        }
+        .lista-os li {
+            margin-bottom: 4px;
+        }
+
+        .globo-consulta-os {
+            background-color: var(--marron-intenso);
+            color: var(--blanco);
+            padding: 35px 25px;
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            box-shadow: 0 8px 20px rgba(125, 69, 27, 0.2);
+        }
+        .globo-consulta-os h3 {
+            color: var(--blanco);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-size: 1.65rem;
+            line-height: 1.15;
+            margin: 0 0 12px 0;
+        }
+        .globo-consulta-os p {
+            color: var(--blanco);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        /* Sección Hace tu consulta con íconos (Flyer 1 abajo) */
+        .contacto-directo {
+            padding: 30px 25px;
+            background-color: var(--blanco);
+            border-radius: 28px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            margin-top: 20px;
+        }
+        .contacto-directo h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--terracota-suave);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .item-contacto {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 16px;
+            color: var(--texto-oscuro);
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .item-contacto svg {
+            width: 26px;
+            height: 26px;
+            fill: var(--texto-oscuro);
+            flex-shrink: 0;
         }
 
         /* Botón Flotante WhatsApp */
@@ -216,7 +473,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             z-index: 1000;
             transition: transform 0.3s;
         }
@@ -224,8 +481,8 @@
             transform: scale(1.1);
         }
         .wa-flotante svg {
-            width: 35px;
-            height: 35px;
+            width: 34px;
+            height: 34px;
             fill: currentColor;
         }
 
@@ -234,12 +491,18 @@
             background-color: var(--texto-oscuro);
             color: var(--bg-crema);
             text-align: center;
-            padding: 50px 20px;
+            padding: 45px 20px;
+            margin-top: 40px;
+        }
+        footer h2 {
+            color: var(--bg-crema);
+            margin-bottom: 5px;
+            font-size: 2rem;
         }
         footer a {
-            color: var(--terracota);
+            color: var(--terracota-suave);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -247,71 +510,95 @@
 
     <!-- HEADER -->
     <header>
-        <div class="header-logo">GS</div>
-        <div class="header-texto">
-            <strong>Lic. Gabriela Sobral</strong>
-            <span>Psicóloga Clínica · M.P. 16.087</span>
+        <div class="header-brand">
+            <div class="header-logo">GS</div>
+            <div class="header-texto">
+                <strong>Lic. Gabriela Sobral</strong>
+                <span>Psicóloga Clínica · M.P. 16.087</span>
+            </div>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <div class="contenedor">
-        <img src="perfil.jpg.jpeg" alt="Lic. Gabriela Sobral" class="profile-img">
-        
-        <span class="seccion-etiqueta">Psicóloga Clínica · M.P. 16.087</span>
-        <h1>Hola, soy <br><span class="resaltado-verde">Gabriela Sobral</span></h1>
-        
-        <p>Especializada en <strong>Terapia Cognitivo Conductual (TCC)</strong></p>
-        
-        <div class="btn-container">
-            <a href="https://wa.me/5493515945085" class="btn" target="_blank">Agendar una sesión</a>
-            <a href="https://www.instagram.com/psico.gabrielasobral?igsh=MXA1OGUzMHlvajMwdw==" class="btn-outline" target="_blank">Visitar mi Instagram</a>
+    <!-- HERO SECTION CON ESTILO DEL FLYER 1 -->
+    <div class="hero-wrapper">
+        <div class="contenedor">
+            <div class="hero-grid">
+                <div class="hero-info">
+                    <div class="titulo-psicologa">Psicóloga</div>
+                    <div class="subtitulo-lic">Lic. Sobral Gabriela</div>
+                    <span class="matricula-badge">Psicóloga Clínica · M.P. 16.087</span>
+
+                    <div class="saludo-original">Hola, soy Gabriela Sobral</div>
+                    <p style="margin-bottom: 8px;">Atención psicológica individual.</p>
+                    <p style="margin-top: 0;">Especializada en <strong>Terapia Cognitivo Conductual (TCC)</strong>.</p>
+
+                    <div class="btn-container">
+                        <a href="https://wa.me/5493515945085" class="btn" target="_blank">Agendar una sesión</a>
+                        <a href="https://www.instagram.com/psico.gabrielasobral?igsh=MXA1OGUzMHlvajMwdw==" class="btn-outline" target="_blank">Visitar mi Instagram</a>
+                    </div>
+                </div>
+
+                <div class="profile-img-container">
+                    <img src="perfil.jpg.jpeg" alt="Lic. Gabriela Sobral" class="profile-img">
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- SOBRE MI -->
-    <div class="contenedor" style="padding-top: 10px;">
-        <h2>Un poco <span class="resaltado-verde">sobre mí</span></h2>
+    <div class="contenedor" style="padding-top: 20px;">
+        <h2>Un poco <span class="resaltado-tierra">sobre mí</span></h2>
         
         <p>Soy <strong>Licenciada en Psicología egresada de la Universidad Nacional de Córdoba.</strong></p>
         <p>Acompaño procesos terapéuticos de adolescentes y adultos desde la Terapia Cognitivo Conductual (TCC) y Terapias Contextuales.</p>
         <p>Me gusta definir la terapia como un trabajo en equipo: un espacio seguro y cálido, donde exploramos juntos qué cosas te están haciendo ruido hoy.</p>
-        <p style="font-weight: 600; color: var(--terracota);">Si estás buscando un lugar para priorizarte, ¡llegaste al lugar indicado!</p>
+        <p style="font-weight: 600; color: var(--marron-intenso);">Si estás buscando un lugar para priorizarte, ¡llegaste al lugar indicado!</p>
     </div>
 
-    <!-- PRIMERA CONSULTA (Fondo Terracota) -->
+    <!-- FOTO DEL CONSULTORIO + MODALIDAD (ESTILO FLYER 1) -->
+    <div class="contenedor" style="padding-top: 10px;">
+        <div class="consultorio-modalidad-grid">
+            <div>
+                <img src="fto_con.jpeg" alt="Espacio de consulta cálido y seguro" class="img-ambiente-circular">
+            </div>
+            <div class="globo-marron">
+                <h3>Modalidad</h3>
+                <p>Presencial o Virtual</p>
+                <p style="margin-top: 18px; font-weight: 400;">Barrio Gral. Paz,<br>Córdoba</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRIMERA CONSULTA -->
     <section class="seccion-terracota">
         <div style="max-width: 600px; margin: 0 auto;">
-            <h2>Sobre la <br>primera consulta</h2>
+            <h2>Sobre la primera consulta</h2>
             <p>Durante nuestro primer encuentro vamos a conocernos, conversar sobre el motivo de tu consulta y definir juntos los objetivos terapéuticos.</p>
             <p><strong>No necesitás preparar nada previamente.</strong></p>
             <p>Es un espacio para que puedas hablar con total tranquilidad y sin juicios.</p>
         </div>
     </section>
 
-    <!-- FOTO DEL CONSULTORIO (Nuevo) -->
-    <div class="contenedor-sin-padding-top">
-        <img src="fto_con.jpeg" alt="Espacio de consulta cálido y seguro" class="img-ambiente">
-    </div>
-
     <!-- A QUIENES ACOMPAÑO -->
-    <div class="contenedor" style="padding-top: 10px;">
-        <h2>¿A quiénes <span class="resaltado-verde">acompaño?</span></h2>
+    <div class="contenedor">
+        <h2>¿A quiénes <span class="resaltado-tierra">acompaño?</span></h2>
         
-        <div style="margin-top: 30px;">
-            <h3 style="color: var(--terracota); margin-bottom: 5px;">Adolescentes</h3>
-            <p>Acompañamiento en una etapa de cambios, brindando herramientas para la gestión emocional, la ansiedad y el desarrollo de la identidad.</p>
-        </div>
-        
-        <div style="margin-top: 30px;">
-            <h3 style="color: var(--terracota); margin-bottom: 5px;">Adultos</h3>
-            <p>Abordaje de la ansiedad, el estrés, las crisis vitales y el desarrollo personal mediante intervenciones basadas en evidencia (TCC).</p>
+        <div class="tarjetas-acompano">
+            <div class="card-edad">
+                <h3>Adolescentes</h3>
+                <p>Acompañamiento en una etapa de cambios, brindando herramientas para la gestión emocional, la ansiedad y el desarrollo de la identidad.</p>
+            </div>
+            
+            <div class="card-edad">
+                <h3>Adultos</h3>
+                <p>Abordaje de la ansiedad, el estrés, las crisis vitales y el desarrollo personal mediante intervenciones basadas en evidencia (TCC).</p>
+            </div>
         </div>
     </div>
 
-    <!-- EN QUE PUEDO AYUDARTE (Nuevo) -->
-    <div class="contenedor" style="padding-top: 20px;">
-        <h2>¿En qué puedo <span class="resaltado-verde">ayudarte?</span></h2>
+    <!-- EN QUE PUEDO AYUDARTE -->
+    <div class="contenedor" style="padding-top: 10px;">
+        <h2>¿En qué puedo <span class="resaltado-tierra">ayudarte?</span></h2>
         
         <ul class="lista-ayuda">
             <li>Ansiedad y ataques de pánico.</li>
@@ -329,6 +616,72 @@
         </ul>
     </div>
 
+    <!-- ATENCION PARTICULAR Y OBRAS SOCIALES (FLYER 2) -->
+    <div class="contenedor" style="padding-top: 10px;">
+        <div class="seccion-obras-sociales">
+            <div class="encabezado-coberturas">
+                <h2>• Atención Particular<br>• Obras Sociales</h2>
+            </div>
+
+            <div class="coberturas-grid">
+                <div>
+                    <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--marron-intenso); font-weight: 700; margin-bottom: 15px;">
+                        Trabajo con coberturas a través de los convenios del Colegio de Psicólogos de Córdoba.
+                    </p>
+                    <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--texto-oscuro); font-weight: 700; margin-bottom: 8px;">
+                        Algunas de ellas son:
+                    </p>
+                    <ul class="lista-os">
+                        <li>· Avalian</li>
+                        <li>· Prevención Salud</li>
+                        <li>· Federada Salud</li>
+                        <li>· Jerárquicos Salud</li>
+                        <li>· OSPE</li>
+                        <li>· OSPEDYC (LibSalud)</li>
+                        <li>· Luis Pasteur</li>
+                        <li>· O.S.E.P.</li>
+                        <li>· William Hope</li>
+                        <li>· Caja de Abogados</li>
+                        <li>· Poder Judicial de la Nación</li>
+                        <li>· Empleados Banco de Córdoba</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="globo-consulta-os">
+                        <h3>¿No encontrás tu cobertura?</h3>
+                        <p><strong>Consultame y te informo si tiene convenio</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HACE TU CONSULTA (DATOS DEL FLYER 1) -->
+        <div class="contacto-directo">
+            <h3>Hace tu consulta</h3>
+            
+            <a href="https://wa.me/5493515945085" target="_blank" class="item-contacto">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.24c1.12.45 2.33.69 3.58.69a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.24 2.46.69 3.58a1 1 0 01-.24 1.11l-2.33 2.1z"/></svg>
+                <span>+54 9 3515945085</span>
+            </a>
+
+            <a href="https://www.instagram.com/psico.gabrielasobral?igsh=MXA1OGUzMHlvajMwdw==" target="_blank" class="item-contacto">
+                <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 01-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 017.8 2m-.2 2A3.6 3.6 0 004 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 003.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 011.25 1.25A1.25 1.25 0 0117.25 8 1.25 1.25 0 0116 6.75a1.25 1.25 0 011.25-1.25M12 7a5 5 0 015 5 5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5m0 2a3 3 0 00-3 3 3 3 0 003 3 3 3 0 003-3 3 3 0 00-3-3z"/></svg>
+                <span>psico.gabrielasobral</span>
+            </a>
+
+            <a href="mailto:lic.gabrielasobral@gmail.com" class="item-contacto">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>lic.gabrielasobral@gmail.com</span>
+            </a>
+
+            <div class="item-contacto">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+                <span>Consultorio Barrio Gral. Paz, Córdoba.</span>
+            </div>
+        </div>
+    </div>
+
     <!-- BOTON FLOTANTE WHATSAPP -->
     <a href="https://wa.me/5493515945085" class="wa-flotante" target="_blank" title="Contactar por WhatsApp">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -338,11 +691,12 @@
 
     <!-- FOOTER -->
     <footer>
-        <h2 style="color: var(--bg-crema); margin-bottom: 5px;">Lic. Gabriela Sobral</h2>
-        <p style="margin-top: 0; color: #999;">Psicóloga Clínica</p>
-        <p style="margin-top: 30px;">
-            <a href="https://www.instagram.com/psico.gabrielasobral?igsh=MXA1OGUzMHlvajMwdw==" target="_blank">Instagram</a> | 
-            <a href="https://wa.me/5493515945085" target="_blank">WhatsApp</a>
+        <h2>Lic. Gabriela Sobral</h2>
+        <p style="margin-top: 0; color: #C4B7B0;">Psicóloga Clínica · M.P. 16.087</p>
+        <p style="margin-top: 25px;">
+            <a href="https://www.instagram.com/psico.gabrielasobral?igsh=MXA1OGUzMHlvajMwdw==" target="_blank">Instagram</a> &nbsp;|&nbsp; 
+            <a href="https://wa.me/5493515945085" target="_blank">WhatsApp</a> &nbsp;|&nbsp;
+            <a href="mailto:lic.gabrielasobral@gmail.com">Email</a>
         </p>
     </footer>
 
