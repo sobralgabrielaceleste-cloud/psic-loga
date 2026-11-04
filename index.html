@@ -154,19 +154,18 @@
             font-weight: 700;
         }
 
-       /* Imagen de perfil rectangular con bordes redondeados armónicos */
+  /* Imagen de perfil completa sin ningún recorte */
         .profile-img-container {
             display: flex;
             justify-content: center;
-            height: 100%;
+            align-items: center;
         }
         .profile-img {
             width: 100%;
             max-width: 340px;
-            height: 430px;
+            height: auto; /* Muestra la proporción completa sin cortar nada */
             border-radius: 28px;
-            object-fit: cover;
-            object-position: center top;
+             display: block;
             box-shadow: 0 12px 30px rgba(67, 45, 34, 0.12);
             border: 6px solid var(--blanco);
         }
